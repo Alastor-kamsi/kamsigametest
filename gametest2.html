@@ -30,7 +30,10 @@
                 <img src="images/us.jpg" class="col-12 img-fluid" alt="kamsi12" id="imgcountry" style="border: 2px solid black; border-radius: 30px;">
             </div>
 
-            <div class="col col-5"></div>
+            <div class="col col-5 text-center">
+                <h3>Score: <span id="score">0</span></h3>
+            </div>
+            
         </div>
 
         <div class="row mt-5">
@@ -66,293 +69,440 @@
                 "If you are ready, Let's Go!";
             }
 
-            var question = 0;
+var question = 0;
+var score = 0;
 
-            function checkAnswer() {
-                var answer = document.getElementById("inputcountry").value.toLowerCase();
-                var img = document.getElementById("imgcountry");
+function checkAnswer() {
 
-                if (question == 0) {
-                    if (answer.toLowerCase() == "us" || answer.toLowerCase() == "usa" || answer.toLowerCase() == "united states" || answer.toLowerCase() == "united states of america") {
-                        alert("😀 You are correct. 😀");
-                    } else {
-                        alert("😞 You are not correct, it is the USA 😞");
-                    }
+    var answer = document.getElementById("inputcountry").value.toLowerCase().trim();
+    var img = document.getElementById("imgcountry");
 
-                    img.src = "images/australia.jpg";
-                    question = 1;
-                }
+    if (question == 0) {
 
-                else if (question == 1) {
-                    if (answer == "australia") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is Australia 😞");
-                    }
+        if (answer == "us" || answer == "usa" ||
+            answer == "united states" ||
+            answer == "united states of america") {
 
-                    img.src = "images/uk.png";
-                    question = 2;
-                }
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct. 😀");
 
-                else if (question == 2) {
-                    if (answer.toLowerCase() == "uk" || answer.toLowerCase() == "united kingdom" || answer.toLowerCase() == "britain" || answer.toLowerCase() == "great britain") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is the UK 😞");
-                    }
+        } else {
+            alert("😞 You are not correct, it is the USA 😞");
+        }
 
-                    img.src = "images/japan.png";
-                    question = 3;
-                }
+        img.src = "images/australia.jpg";
+        question = 1;
+    }
 
-                else if (question == 3) {
-                    if (answer.toLowerCase() == "japan") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is Japan 😞");
-                    }
+    else if (question == 1) {
 
-                    img.src = "images/china.jpg";
-                    question = 4;
-                }
+        if (answer == "australia") {
 
-                else if (question == 4) {
-                    if (answer.toLowerCase() == "china") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is China 😞");
-                    }
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
 
-                    img.src = "images/france.png";
-                    question = 5;
-                }
+        } else {
+            alert("😞 You are not correct, it is Australia 😞");
+        }
 
-                else if (question == 5) {
-                    if (answer.toLowerCase() == "france") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is France 😞");
-                    }
+        img.src = "images/uk.png";
+        question = 2;
+    }
 
-                    img.src = "images/germany.png";
-                    question = 6;
-                }
+    else if (question == 2) {
 
-                else if (question == 6) {
-                    if (answer.toLowerCase() == "germany") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is Germany 😞");
-                    }
+        if (answer == "uk" ||
+            answer == "united kingdom" ||
+            answer == "britain" ||
+            answer == "great britain") {
 
-                    img.src = "images/nigeria.png";
-                    question = 7;
-                }
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
 
-                else if (question == 7) {
-                    if (answer.toLowerCase() == "nigeria") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is Nigeria 😞");
-                    }
+        } else {
+            alert("😞 You are not correct, it is the UK 😞");
+        }
 
-                    img.src = "images/russia.png";
-                    question = 8;
-                }
+        img.src = "images/japan.png";
+        question = 3;
+    }
 
-                else if (question == 8) {
-                    if (answer.toLowerCase() == "russia") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is Russia 😞");
-                    }
-                    img.src = "images/argentina.webp";
-                    question = 9;
-                }
-                else if (question == 9) {
-                    if (answer.toLowerCase() == "argentina") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is Argentina 😞");
-                    }
+    else if (question == 3) {
 
-                    img.src = "images/brazil.jpg";
-                    question = 10;
-                }
+        if (answer == "japan") {
 
-                else if (question == 10) {
-                    if (answer.toLowerCase() == "brazil") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is Brazil 😞");
-                    }
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
 
-                    img.src = "images/canada.jpg";
-                    question = 11;
-                }
+        } else {
+            alert("😞 You are not correct, it is Japan 😞");
+        }
 
-                else if (question == 11) {
-                    if (answer.toLowerCase() == "canada") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is Canada 😞");
-                    }
+        img.src = "images/china.jpg";
+        question = 4;
+    }
 
-                    img.src = "images/egypt.png";
-                    question = 12;
-                }
+    else if (question == 4) {
 
-                else if (question == 12) {
-                    if (answer.toLowerCase() == "egypt") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is Egypt 😞");
-                    }
+        if (answer == "china") {
 
-                    img.src = "images/ghana.png";
-                    question = 13;
-                }
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
 
-                else if (question == 13) {
-                    if (answer.toLowerCase() == "ghana") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is Ghana 😞");
-                    }
+        } else {
+            alert("😞 You are not correct, it is China 😞");
+        }
 
-                    img.src = "images/india.jpg";
-                    question = 14;
-                }
+        img.src = "images/france.png";
+        question = 5;
+    }
 
-                else if (question == 14) {
-                    if (answer.toLowerCase() == "india") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is India 😞");
-                    }
+    else if (question == 5) {
 
-                    img.src = "images/iran.png";
-                    question = 15;
-                }
+        if (answer == "france") {
 
-                else if (question == 15) {
-                    if (answer.toLowerCase() == "iran") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is Iran 😞");
-                    }
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
 
-                    img.src = "images/kenya.png";
-                    question = 16;
-                }
+        } else {
+            alert("😞 You are not correct, it is France 😞");
+        }
 
-                else if (question == 16) {
-                    if (answer.toLowerCase() == "kenya") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is Kenya 😞");
-                    }
+        img.src = "images/germany.png";
+        question = 6;
+    }
 
-                    img.src = "images/kuwait.jpg";
-                    question = 17;
-                }
+    else if (question == 6) {
 
-                else if (question == 17) {
-                    if (answer.toLowerCase() == "kuwait") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is Kuwait 😞");
-                    }
+        if (answer == "germany") {
 
-                    img.src = "images/mexico.png";
-                    question = 18;
-                }
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
 
-                else if (question == 18) {
-                    if (answer.toLowerCase() == "mexico") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is Mexico 😞");
-                    }
+        } else {
+            alert("😞 You are not correct, it is Germany 😞");
+        }
 
-                    img.src = "images/North Korea.jpg";
-                    question = 19;
-                }
+        img.src = "images/nigeria.png";
+        question = 7;
+    }
 
-                else if (question == 19) {
-                    if (answer.toLowerCase() == "north korea" || answer.toLowerCase() == "northkorea" || answer.toLowerCase() == "dprk" || answer.toLowerCase() == "democratic people's republic of korea") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is North Korea 😞");
-                    }
+    else if (question == 7) {
 
-                    img.src = "images/pakistan.png";
-                    question = 20;
-                }
+        if (answer == "nigeria") {
 
-                else if (question == 20) {
-                    if (answer.toLowerCase() == "pakistan") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is Pakistan 😞");
-                    }
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
 
-                    img.src = "images/Saudi Arabia.png";
-                    question = 21;
-                }
+        } else {
+            alert("😞 You are not correct, it is Nigeria 😞");
+        }
 
-                else if (question == 21) {
-                    if (answer.toLowerCase() == "saudi arabia") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is Saudi Arabia 😞");
-                    }
+        img.src = "images/russia.png";
+        question = 8;
+    }
 
-                    img.src = "images/South Africa.png";
-                    question = 22;
-                }
+    else if (question == 8) {
 
-                else if (question == 22) {
-                    if (answer.toLowerCase() == "south africa") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is South Africa 😞");
-                    }
+        if (answer == "russia") {
 
-                    img.src = "images/South Korea.jpg";
-                    question = 23;
-                }
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
 
-                else if (question == 23) {
-                    if (answer.toLowerCase() == "south korea") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is South Korea 😞");
-                    }
+        } else {
+            alert("😞 You are not correct, it is Russia 😞");
+        }
 
-                    img.src = "images/tanzania.webp";
-                    question = 24;
-                }
+        img.src = "images/argentina.webp";
+        question = 9;
+    }
 
-                else if (question == 24) {
-                    if (answer.toLowerCase() == "tanzania") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is Tanzania 😞");
-                    }
+    else if (question == 9) {
 
-                    img.src = "images/vietnam.png";
-                    question = 25;
-                }
+        if (answer == "argentina") {
 
-                else if (question == 25) {
-                    if (answer.toLowerCase() == "vietnam") {
-                        alert("😀 You are correct 😀");
-                    } else {
-                        alert("😞 You are not correct, it is Vietnam 😞");
-                    }
-                }
-            }
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
+
+        } else {
+            alert("😞 You are not correct, it is Argentina 😞");
+        }
+
+        img.src = "images/brazil.jpg";
+        question = 10;
+    }
+
+    else if (question == 10) {
+
+        if (answer == "brazil") {
+
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
+
+        } else {
+            alert("😞 You are not correct, it is Brazil 😞");
+        }
+
+        img.src = "images/canada.jpg";
+        question = 11;
+    }
+
+    else if (question == 11) {
+
+        if (answer == "canada") {
+
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
+
+        } else {
+            alert("😞 You are not correct, it is Canada 😞");
+        }
+
+        img.src = "images/egypt.png";
+        question = 12;
+    }
+
+    else if (question == 12) {
+
+        if (answer == "egypt") {
+
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
+
+        } else {
+            alert("😞 You are not correct, it is Egypt 😞");
+        }
+
+        img.src = "images/ghana.png";
+        question = 13;
+    }
+
+    else if (question == 13) {
+
+        if (answer == "ghana") {
+
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
+
+        } else {
+            alert("😞 You are not correct, it is Ghana 😞");
+        }
+
+        img.src = "images/india.jpg";
+        question = 14;
+    }
+
+    else if (question == 14) {
+
+        if (answer == "india") {
+
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
+
+        } else {
+            alert("😞 You are not correct, it is India 😞");
+        }
+
+        img.src = "images/iran.png";
+        question = 15;
+    }
+
+    else if (question == 15) {
+
+        if (answer == "iran") {
+
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
+
+        } else {
+            alert("😞 You are not correct, it is Iran 😞");
+        }
+
+        img.src = "images/kenya.png";
+        question = 16;
+    }
+
+    else if (question == 16) {
+
+        if (answer == "kenya") {
+
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
+
+        } else {
+            alert("😞 You are not correct, it is Kenya 😞");
+        }
+
+        img.src = "images/kuwait.jpg";
+        question = 17;
+    }
+
+    else if (question == 17) {
+
+        if (answer == "kuwait") {
+
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
+
+        } else {
+            alert("😞 You are not correct, it is Kuwait 😞");
+        }
+
+        img.src = "images/mexico.png";
+        question = 18;
+    }
+
+    else if (question == 18) {
+
+        if (answer == "mexico") {
+
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
+
+        } else {
+            alert("😞 You are not correct, it is Mexico 😞");
+        }
+
+        img.src = "images/North Korea.jpg";
+        question = 19;
+    }
+
+    else if (question == 19) {
+
+        if (answer == "north korea" ||
+            answer == "northkorea" ||
+            answer == "dprk" ||
+            answer == "democratic people's republic of korea") {
+
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
+
+        } else {
+            alert("😞 You are not correct, it is North Korea 😞");
+        }
+
+        img.src = "images/pakistan.png";
+        question = 20;
+    }
+
+    else if (question == 20) {
+
+        if (answer == "pakistan") {
+
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
+
+        } else {
+            alert("😞 You are not correct, it is Pakistan 😞");
+        }
+
+        img.src = "images/Saudi Arabia.png";
+        question = 21;
+    }
+
+    else if (question == 21) {
+
+        if (answer == "saudi arabia") {
+
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
+
+        } else {
+            alert("😞 You are not correct, it is Saudi Arabia 😞");
+        }
+
+        img.src = "images/South Africa.png";
+        question = 22;
+    }
+
+    else if (question == 22) {
+
+        if (answer == "south africa") {
+
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
+
+        } else {
+            alert("😞 You are not correct, it is South Africa 😞");
+        }
+
+        img.src = "images/South Korea.jpg";
+        question = 23;
+    }
+
+    else if (question == 23) {
+
+        if (answer == "south korea") {
+
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
+
+        } else {
+            alert("😞 You are not correct, it is South Korea 😞");
+        }
+
+        img.src = "images/tanzania.webp";
+        question = 24;
+    }
+
+    else if (question == 24) {
+
+        if (answer == "tanzania") {
+
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
+
+        } else {
+            alert("😞 You are not correct, it is Tanzania 😞");
+        }
+
+        img.src = "images/vietnam.png";
+        question = 25;
+    }
+
+    else if (question == 25) {
+
+        if (answer == "vietnam") {
+
+            score++;
+            document.getElementById("score").innerText = score;
+            alert("😀 You are correct 😀");
+
+        } else {
+            alert("😞 You are not correct, it is Vietnam 😞");
+        }
+
+        alert("🎉 Game finished! Your final score is " + score + "/26");
+    }
+
+    // Clear the input box after every answer
+    document.getElementById("inputcountry").value = "";
+}
         </script>
     </div>
 
